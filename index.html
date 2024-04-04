@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuste do ICMS</title>
+</head>
+<body>
+
+<div class="dmi">DMI</br> <!-- CAMPO onde vai informar o subtotal da DMI e ICMS DMI-->
+    
+ <input id="inputTotalDMI" type="number" placeholder="Subtotal da DMI"><br>
+ <input id="inputICMS" type="number" placeholder="ICMS  da DMI"> 
+ <p id="total"></p>  
+</div>
+<div class="textoMapa">
+  
+</div>
+
+<div class="Eap"> <!--Campo onde vai informar o valor do icms no sup3760 e-->
+<input id="supICMS" type="number" placeholder="Valor do ICMS no sup3760">
+<p id="icmsDMI"></p>
+<p id="difICMS"></p>
+</div>    
+<div class="total">
+<input type="text" id="supTotal" placeholder="Valor total do sup3760">
+<p id="totalDMI"></p>
+<p id="difDMI"></p>
+</div>
+<div class="itensICMS">Itens Q-ICMS
+ <table border="1">
+<tr>
+    <th>Origem</th>
+    <th>Aliquota</th>
+    <th>Red. Base</th>
+    <th> diferença</th>
+    <th>Base de Calculo</th>
+    <th>Valor</th>
+    <th>%GT</th>
+    <th>Centavos a Reduzir</th>    
+</tr>
+
+<tr>
+    <th><p>Dec(Usuario)</p></th>
+    <th><input type="number" placeholder="aliqUsuarioTable" id=""></th>
+    <th><input type="number" placeholder="Red Base" id=""></th>
+    <th><input type="number" placeholder="Diferença" id=""></th>
+    <th><input type="number" placeholder="Base de Cálculo" id=""></th>
+    <th><p id="valorUsuarioTable">Valor</p></th>
+    <th><p id="GT-UsuarioTable">%GT</p></th>
+    <th><p id="centavosUsuarioTable">centavos</p></th>
+    </tr>    
+
+    <tr>
+        <th>Cal/Sistema 1º Item</th>
+        <th><p id="aliquotaIcmsSistemaTable"></p></th>
+        <th>75,61%</th>
+        <th> 0</th>
+        <th><p id="baseCalculo-SistemaTable"></p></th>
+        <th><p id="valorSistemaTable"></p></th>
+        <th><p id="GT-SistemaTable"></p></th>
+        <th><p id="centavosSistemaTable"></p></th>    
+    </tr>
+
+       
+   
+</table> 
+<button onclick="btnAcao()">Iniciar</button>
+
+</div>
+<script>
+
+
+
+function btnAcao() {
+let subTotalDMI = parseFloat(document.querySelector("#inputTotalDMI").value);  
+let icmsTotalDMI = parseFloat(document.querySelector("#inputICMS").value);
+    let totalDMI = subTotalDMI + icmsTotalDMI;
+
+    alert(totalDMI.toFixed(2));  
+}
+
+</script>
+</body>
+</html>
