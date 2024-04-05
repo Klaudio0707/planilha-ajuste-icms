@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuste do ICMS</title>
+</head>
+<body>
+
+<div class="dmi">
+<h3>DMI</h3><!-- CAMPO onde vai informar o subtotal da DMI e ICMS DMI-->
+ 
+ <input id="inputTotalDMI" onblur="totalDMI()" type="text" placeholder="Subtotal da DMI"><br>
+ <input id="inputICMS" type="text" placeholder="ICMS  da DMI"> 
+ <p id="total"></p>  
+</div> <!-- terminado-->
+<div class="Eap"> <!--Campo onde vai informar o valor do icms no sup3760 e-->
+  <h3>EAP - ICMS</h3>
+  <p id="outputICMSDMI"></p>
+<p id="outputDMI"></p>  
+
+</div>  
+  
+  <script>
+
+      let inputTotalDMI = parseFloat(document.querySelector("#inputTotalDMI").value);
+      let inputICMS = parseFloat(document.querySelector("#inputICMS").value);
+
+      let outputTotalDMI = document.getElementById("total");
+
+      function totalDMI() {
+    let inputTotalDMI = parseFloat(document.querySelector("#inputTotalDMI").value); 
+    const outputDMI = document.getElementById("outputDMI");
+
+    outputDMI.innerHTML = "R$ " + inputTotalDMI;
+          
+        }    
+
+        //let totalDMI = inputTotalDMI + inputICMS;
+          
+          //outputTotalDMI.innerHTML = totalDMI;
+
+
+
+</script>
